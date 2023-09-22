@@ -1,3 +1,4 @@
+<aaa>
 <!-- Definition -->
 <definition class="patch" id="oval:com.redhat.rhba:def:20191992" version="635">
  <metadata>
@@ -112,3 +113,5 @@ Users of cloud-init are advised to upgrade to these updated packages.</descripti
  <red-def:name operation="pattern match">^redhat-release-coreos</red-def:name>
  <red-def:version operation="pattern match">^4[\d]+?[^\d]</red-def:version>
 </red-def:rpmverifyfile_state>
+
+</aaa>

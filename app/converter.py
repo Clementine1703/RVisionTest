@@ -18,7 +18,7 @@ class OvalToJsonConverter():
 
     def convert(self, filepath) -> None:
         self.root_node = ET.parse(filepath).getroot()
-        self.json_dict['oval_definitions']['definitions'] = self.parse_definitions(count=3)
+        self.json_dict['oval_definitions']['definitions'] = self.parse_definitions(count=3) #первые 3 определения
         self.json_dict['oval_definitions']['tests'] = self.parse_items('test_ref')
         self.json_dict['oval_definitions']['objects'] = self.parse_items('object_ref')
         self.json_dict['oval_definitions']['states'] = self.parse_items('state_ref')
