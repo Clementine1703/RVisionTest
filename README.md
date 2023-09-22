@@ -28,13 +28,13 @@
 	Вторая уязвимость:
 		- так же как 3-я.
 	Третья уязвимость: 
-		- тут интереснее. Так как в определении третьей уязвимости в теге \platform> уже указана версия ОС, можно удалить из критериев проверки на версию ОС. То есть:
+		- тут интереснее. Так как в определении третьей уязвимости в теге \<platform> уже указана версия ОС, можно удалить из критериев проверки на версию ОС. То есть:
 	
-  	1) \criterion comment="Red Hat Enterprise Linux must be installed" test_ref="oval:com.redhat.rhba:tst:20191992005"/>
-  	2) \criterion comment="Red Hat Enterprise Linux 8 is installed" test_ref="oval:com.redhat.rhba:tst:20191992003"/>
-  	3) \criterion comment="Red Hat CoreOS 4 is installed" test_ref="oval:com.redhat.rhba:tst:20191992004"/>
+  	1) \<criterion comment="Red Hat Enterprise Linux must be installed" test_ref="oval:com.redhat.rhba:tst:20191992005"/>
+  	2) \<criterion comment="Red Hat Enterprise Linux 8 is installed" test_ref="oval:com.redhat.rhba:tst:20191992003"/>
+  	3) \<criterion comment="Red Hat CoreOS 4 is installed" test_ref="oval:com.redhat.rhba:tst:20191992004"/>
 
-Напомню, что в определении 3-й уязвимости в теге \platform> указано значение "Red Hat Enterprise Linux 8"
+Напомню, что в определении 3-й уязвимости в теге \<platform> указано значение "Red Hat Enterprise Linux 8"
 
 Критерий под номером 3) вообще противоречит тегу platform, его однозначно нужно исключить. Критерий под номером 1) тоже не совсем верный, т.к. не указывает на определенную версию ОС а, т.к. он находится внутри конструкции OR, то его значение True сделает бесполезными следующие проверки, общий результат будет True, а это противоречит тегу Platform, ведь сработает при любой версии ОС. Критерий 2) можно, в принципе, оставить. Это поможет установить более строгое соответствие ОС.
 
