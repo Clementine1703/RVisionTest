@@ -1,6 +1,6 @@
 # RVisionTest
 
-Ручной частичный анализ OVAL-файла.<br><br>
+### Ручной частичный анализ OVAL-файла.<br><br>
 
 1. Был проведен анализ первых трех уязвимостей (патчей) в OVAL-файле. <br>
 На мой взгляд, основными объектами, из которых состоит отдельная уязвимость являются: <br>
@@ -30,9 +30,9 @@
 	Третья уязвимость: <br>
 		- тут интереснее. Так как в определении третьей уязвимости в теге \<platform> уже указана версия ОС, можно удалить из критериев проверки на версию ОС. То есть:<br><br>
 	
-  	1) \<criterion comment="Red Hat Enterprise Linux must be installed" test_ref="oval:com.redhat.rhba:tst:20191992005"/><br>
-  	2) \<criterion comment="Red Hat Enterprise Linux 8 is installed" test_ref="oval:com.redhat.rhba:tst:20191992003"/><br>
-  	3) \<criterion comment="Red Hat CoreOS 4 is installed" test_ref="oval:com.redhat.rhba:tst:20191992004"/><br><br>
+  	1) «`{xml}<пробел>{<criterion comment="Red Hat Enterprise Linux must be installed" test_ref="oval:com.redhat.rhba:tst:20191992005"/><br>}«` 
+  	2) «`{название-языка}<пробел>{<criterion comment="Red Hat Enterprise Linux 8 is installed" test_ref="oval:com.redhat.rhba:tst:20191992003"/>}«`<br>
+  	3) «`{название-языка}<пробел>{<criterion comment="Red Hat CoreOS 4 is installed" test_ref="oval:com.redhat.rhba:tst:20191992004"/>}«`<br><br>
 
 Напомню, что в определении 3-й уязвимости в теге \<platform> указано значение "Red Hat Enterprise Linux 8"<br><br>
 
